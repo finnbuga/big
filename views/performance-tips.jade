@@ -1,0 +1,26 @@
+article
+  h2 Performance techniques
+  p
+    | The techniques bellow are for reducing the time to the first meaningful paint, the time to display relevant / engaging information and the time for the page to become interactive. They also help provide the user with a snapy interface.
+  ul
+    li
+      | serve different image sizes based on viewport size and pixel density. Use appropriate image formats.
+    li
+      | lazy load images. Basically add a placeholder image for the img attribute. Then add the actual image source to the data-src attribute. Then do img.src = img.dataset.src for images above the fold (or that come into view after scrolling). Better still use a library
+    li reduce render blocking JS - use async.
+    li use a CDN in order to serve static resources from servers closer to the user
+    li
+      | minify CSS, JS and HTML, concatenate CSS and JS files, use image sprites to reduce the number of requests and even better:
+    li
+      | use HTTP/2 to multiplex multiple requests and reduce protocol overhead of HTTP headers
+    li reduce redirects
+    li leverage browser caching by setting expire headers
+    li use prefetching (DNS, link, prerender)
+    li remove any resource that is not necessary: CSS, JS, fonts.
+    li minimise main thread work
+    li optimise JS code time and space complexity
+    li optimise the number or reflows and repaints
+    li use localstorage
+    li
+      | optimise server response time: reverse proxy server, caching generated responses, opcode caching, db query caching, db query optimisation, efficient algorithms, vertical scaling, horizontal scaling, load balancers, SQL vs NoSQL databases, database sharding, microservices.
+  
